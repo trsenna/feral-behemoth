@@ -6,15 +6,12 @@ services:
     image: wordpress:php7.3
     restart: always
     ports:
-      - 8080:80
+      - 8000:80
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_NAME: app
       WORDPRESS_DB_USER: app
       WORDPRESS_DB_PASSWORD: app@secret
-
-  wordpress-cli:
-    image: wordpress:cli-php7.3
 
   mysql:
     image: mysql:5.7
