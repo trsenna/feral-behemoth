@@ -2,8 +2,21 @@ version: '3.1'
 
 services:
 
+  mysql:
+    build: docker/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app@secret
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - net
+
   wordpress:
-    image: wordpress:php7.3
+    build: docker/wordpress
     restart: always
     ports:
       - 8000:80
@@ -12,12 +25,14 @@ services:
       WORDPRESS_DB_NAME: app
       WORDPRESS_DB_USER: app
       WORDPRESS_DB_PASSWORD: app@secret
+    volumes:
+      - wordpress_html:/var/www/html
+    networks:
+      - net
 
-  mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: app
-      MYSQL_USER: app
-      MYSQL_PASSWORD: app@secret
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+volumes:
+  mysql_data:
+  wordpress_html:
+
+networks:
+  net:
