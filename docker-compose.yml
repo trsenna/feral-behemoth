@@ -12,8 +12,6 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - mysql_data:/var/lib/mysql
-    networks:
-      - net
 
   wordpress:
     build: docker/wordpress
@@ -27,14 +25,8 @@ services:
       WORDPRESS_DB_PASSWORD: app@secret
     volumes:
       - wordpress_html:/var/www/html
-      - ./app-foundation:/var/www/html/wp-content/plugins/app-foundation
       - ./app-functionality:/var/www/html/wp-content/plugins/app-functionality
-    networks:
-      - net
 
 volumes:
   mysql_data:
   wordpress_html:
-
-networks:
-  net:
