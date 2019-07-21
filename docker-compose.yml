@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   mysql:
-    build: docker/mysql
+    image: mysql:5.7
     restart: always
     environment:
       MYSQL_DATABASE: app
@@ -14,7 +14,7 @@ services:
       - mysql_data:/var/lib/mysql
 
   wordpress:
-    build: docker/wordpress
+    image: wordpress:php7.3
     restart: always
     ports:
       - 8000:80
