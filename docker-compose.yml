@@ -27,6 +27,8 @@ services:
       - wordpress_html:/var/www/html
       - ./app-functionality:/var/www/html/wp-content/plugins/app-functionality
       - ./app-theme:/var/www/html/wp-content/themes/app-theme
+    depends_on:
+      - mysql
 
 volumes:
   mysql_data:
