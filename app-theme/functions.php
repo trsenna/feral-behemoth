@@ -28,3 +28,12 @@ add_action('mezu/bootstrap', function (Theme $theme) {
 add_filter('mezu/autoload/files', function (array $files) {
     return $files;
 });
+
+/*  -----------------------------------------------------------------------------------------------
+    LOREM IPSUM
+    Suspendisse sodales ipsum non justo imperdiet cursus.
+--------------------------------------------------------------------------------------------------- */
+
+add_action('after_setup_theme', function () {
+    // ...
+});
