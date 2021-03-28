@@ -11,7 +11,10 @@ define('APP_THEME_FILE', __FILE__);
 --------------------------------------------------------------------------------------------------- */
 
 add_filter('mezu/autoload/files', function (array $files) {
-    return $files;
+    return array_merge($files, [
+        get_theme_file_path('includes/functions-assets.php'),
+        get_theme_file_path('includes/functions-setup.php'),
+    ]);
 });
 
 /*  -----------------------------------------------------------------------------------------------

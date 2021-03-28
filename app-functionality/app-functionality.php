@@ -27,7 +27,10 @@ define('APP_FUNCTIONALITY_PLUGIN_FILE', __FILE__);
 --------------------------------------------------------------------------------------------------- */
 
 add_filter('mazoo/autoload/files', function (array $files) {
-	return $files;
+	return array_merge($files, [
+		plugin_dir_path(__FILE__) . 'includes/functions-assets.php',
+		plugin_dir_path(__FILE__) . 'includes/functions-loaded.php',
+	]);
 });
 
 /*  -----------------------------------------------------------------------------------------------
