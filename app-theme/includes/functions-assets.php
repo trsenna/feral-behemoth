@@ -7,6 +7,6 @@ namespace App\Theme;
     Suspendisse sodales ipsum non justo imperdiet cursus.
 --------------------------------------------------------------------------------------------------- */
 
-add_filter('wp_enqueue_scripts', function () {
+add_action('wp_enqueue_scripts', function () {
     // ...
 });

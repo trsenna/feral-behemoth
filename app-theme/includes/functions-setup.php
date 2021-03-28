@@ -7,6 +7,6 @@ namespace App\Theme;
     Suspendisse sodales ipsum non justo imperdiet cursus.
 --------------------------------------------------------------------------------------------------- */
 
-add_filter('after_setup_theme', function () {
+add_action('after_setup_theme', function () {
     // ...
 });

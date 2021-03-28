@@ -7,6 +7,6 @@ namespace App\Functionality;
     Suspendisse sodales ipsum non justo imperdiet cursus.
 --------------------------------------------------------------------------------------------------- */
 
-add_filter('plugins_loaded', function () {
+add_action('plugins_loaded', function () {
     // ...
 });
